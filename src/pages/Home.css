@@ -96,7 +96,7 @@
   color: #F1EBFF;
 }
 
-.Gallery__content{
+.Gallery__content > div > div{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

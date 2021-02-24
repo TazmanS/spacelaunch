@@ -1,9 +1,21 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import BigItem from '../components/BigItem'
 import Slider from '../components/Slider'
 import './Home.css'
+import {useDispatch, useSelector} from 'react-redux'
+import {getFirsTenLaunches, getNextTenLaunches} from '../store/actions/launches'
+import InfiniteScroll from 'react-infinite-scroll-component'
+import Loader from '../components/Loader'
+
 
 const Home = () => {
+  const dispatch = useDispatch()
+  const {launches, count} = useSelector(state => state.launches)
+
+  useEffect(() => {
+    dispatch(getFirsTenLaunches())
+  }, [dispatch])
+
   return (
     <div className="Home">
 
@@ -35,10 +47,21 @@ const Home = () => {
               Spaceflight Launches
             </div>
             <div className="Gallery__content">
-              <BigItem />
-              <BigItem />
-              <BigItem />
-              <BigItem />  
+              <InfiniteScroll
+                dataLength={launches.length}
+                next={() => dispatch(getNextTenLaunches(count))}
+                hasMore={true}
+                loader={<Loader />}
+              >
+                {launches.map(el => {
+                  return(
+                    <BigItem 
+                      key={el.id + el.name} 
+                      launch={el}
+                    />
+                  )
+                })}
+              </InfiniteScroll>
             </div>
           </div>
         </div>
