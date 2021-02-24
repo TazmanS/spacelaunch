@@ -1,0 +1,49 @@
+.Slider{
+  position: relative;
+}
+
+.Slider__title{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 54px;
+  line-height: 64px;
+  color: #F1EBFF;
+  margin-bottom: 50px;
+}
+
+.Slider .swiper-container{
+  position: static;
+}
+
+.Slider .swiper-wrapper{
+  
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  display: none;
+}
+
+.Slider__navigation{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 150px;
+  height: 50px;
+  z-index: 99;
+  color: red;
+}
+
+.Slider__navigation .arrow{
+  color: #4A00E0;
+  transform: scale(2, 1.5);
+}
+
+.Slider .swiper-button-disabled{
+  opacity: 1 !important;
+}
+
+.Slider .swiper-button-disabled .arrow{
+  color: #F1EBFF !important;
+  opacity: 1 !important;
+}
