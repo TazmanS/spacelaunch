@@ -1,2 +1,5 @@
 export const GET_ALL_LAUNCHES = 'GET_ALL_LAUNCHES'
 export const GET_NEXT_TEN_LAUNCHES = 'GET_NEXT_TEN_LAUNCHES'
+
+
+export const GET_EVENTS = 'GET_EVENTS'

@@ -7,7 +7,7 @@ import './Slider.css'
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
-const Slider = () => {
+const Slider = ({items}) => {
   return (
     <div className="Slider">
       <div className="Slider__title">
@@ -21,14 +21,13 @@ const Slider = () => {
           prevEl: '.swiper-button-prev',
         }}
       >
-        <SwiperSlide><SmallItem /></SwiperSlide>
-        <SwiperSlide><SmallItem /></SwiperSlide>
-        <SwiperSlide><SmallItem /></SwiperSlide>
-        <SwiperSlide><SmallItem /></SwiperSlide>
-        <SwiperSlide><SmallItem /></SwiperSlide>
-        <SwiperSlide><SmallItem /></SwiperSlide>
-        <SwiperSlide><SmallItem /></SwiperSlide>
-        <SwiperSlide><SmallItem /></SwiperSlide>
+        {items.map(el => {
+          return(
+            <SwiperSlide key={el.id}>
+              <SmallItem item={el}/>
+            </SwiperSlide>
+          )
+        })}
         <div className="Slider__navigation">
           <div className="swiper-button-next">
             <svg width="56" height="28" viewBox="0 0 56 28" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow">

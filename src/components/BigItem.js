@@ -1,8 +1,9 @@
 import React from 'react'
 import './BigItem.css'
+import {Link} from 'react-router-dom'
 
-const BigItem = ({launch}) => {
-  const date = new Date(launch.net)
+const BigItem = ({item}) => {
+  const date = new Date(item.net)
   var options = {
     year: 'numeric',
     month: 'long',
@@ -13,12 +14,14 @@ const BigItem = ({launch}) => {
 
   return (
     <div className="Item">
-      <img src={launch.image_url || 'empty.png'} alt="" className="Item__img"/>
+      <Link to={`/launch/${item.id}`}>
+        <img src={item.image_url || 'empty.png'} alt="" className="Item__img"/>
+      </Link>
       <div className="Item__date">
         {date.toLocaleString("en-US", options)}
       </div>
       <div className="Item__title">
-        {launch.name}
+        <Link to={`/launch/${item.id}`}>{item.name}</Link>
       </div>
     </div>
   )

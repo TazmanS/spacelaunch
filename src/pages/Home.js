@@ -4,6 +4,7 @@ import Slider from '../components/Slider'
 import './Home.css'
 import {useDispatch, useSelector} from 'react-redux'
 import {getFirsTenLaunches, getNextTenLaunches} from '../store/actions/launches'
+import {getEvents} from '../store/actions/events'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Loader from '../components/Loader'
 
@@ -11,9 +12,11 @@ import Loader from '../components/Loader'
 const Home = () => {
   const dispatch = useDispatch()
   const {launches, count} = useSelector(state => state.launches)
+  const {events} = useSelector(state => state.events)
 
   useEffect(() => {
     dispatch(getFirsTenLaunches())
+    dispatch(getEvents())
   }, [dispatch])
 
   return (
@@ -40,7 +43,7 @@ const Home = () => {
       <div className="Home__sectionTwo SectionTwo">
         <div className="SectionTwo__container">
           <div className="SectionTwo__slider Slider">
-            <Slider />
+            <Slider items={events} />
           </div>
           <div className="SectionTwo__gallery Gallery">
             <div className="Gallery__title">
@@ -53,11 +56,11 @@ const Home = () => {
                 hasMore={true}
                 loader={<Loader />}
               >
-                {launches.map(el => {
+                {launches.map(item => {
                   return(
                     <BigItem 
-                      key={el.id + el.name} 
-                      launch={el}
+                      key={item.id + item.name} 
+                      item={item}
                     />
                   )
                 })}

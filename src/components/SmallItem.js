@@ -1,15 +1,23 @@
 import React from 'react'
 import './SmallItem.css'
 
-const SmallItem = () => {
+const SmallItem = ({item}) => {
+  const date = new Date(item.date)
+  var options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+  };
   return (
     <div className="SmallItem">
-      <img src="/empty.png" alt="" className="SmallItem__img"/>
+      <img src={item.feature_image || "/empty.png"} alt="" className="SmallItem__img"/>
       <div className="SmallItem__date">
-        Dec. 6, 2020, 6:17 p.m.
+        {date.toLocaleString("en-US", options)}
       </div>
       <div className="SmallItem__title">
-        Falcon 9 Block 5 | Dragon CRS-2 SpX-21
+        {item.name}
       </div>
     </div>
   )

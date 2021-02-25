@@ -6,6 +6,7 @@
 
 .Item__img{
   height: 264px;
+  min-width: 580px
 }
 
 .Item__date{
