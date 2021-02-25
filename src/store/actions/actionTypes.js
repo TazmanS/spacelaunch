@@ -1,5 +1,7 @@
 export const GET_ALL_LAUNCHES = 'GET_ALL_LAUNCHES'
 export const GET_NEXT_TEN_LAUNCHES = 'GET_NEXT_TEN_LAUNCHES'
 
+export const GET_ONE_LAUNCH_BY_ID = 'GET_ONE_LAUNCH_BY_ID'
 
 export const GET_EVENTS = 'GET_EVENTS'
+

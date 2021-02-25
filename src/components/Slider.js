@@ -7,11 +7,11 @@ import './Slider.css'
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
-const Slider = ({items}) => {
+const Slider = ({items, title}) => {
   return (
     <div className="Slider">
       <div className="Slider__title">
-        Recent Events
+        {title}
       </div>
       <Swiper
         // spaceBetween={50}

@@ -1,17 +1,19 @@
 import React, {useEffect} from 'react'
-import BigItem from '../components/BigItem'
 import Slider from '../components/Slider'
 import './Home.css'
 import {useDispatch, useSelector} from 'react-redux'
-import {getFirsTenLaunches, getNextTenLaunches} from '../store/actions/launches'
+import {getFirsTenLaunches} from '../store/actions/launches'
 import {getEvents} from '../store/actions/events'
-import InfiniteScroll from 'react-infinite-scroll-component'
-import Loader from '../components/Loader'
+import Header from '../sections/Header'
+import Footer from '../sections/Footer'
+import SectionOne from '../sections/SectionOne'
+import SectionTwo from '../sections/SectionTwo'
+import Gallery from '../components/Gallery'
+import BigButton from '../components/BigButton'
 
 
 const Home = () => {
   const dispatch = useDispatch()
-  const {launches, count} = useSelector(state => state.launches)
   const {events} = useSelector(state => state.events)
 
   useEffect(() => {
@@ -21,59 +23,38 @@ const Home = () => {
 
   return (
     <div className="Home">
+      
+      <Header>
+        <img src="/bigLogo.svg" alt="" className="logo"/> 
+      </Header>
 
-      <div className="Header">
-        <div className="Header__content">
-          <img src="/bigLogo.svg" alt=""/>
-        </div>
-      </div>
-
-      <div className="Home__sectionOne SectionOne">
+      <SectionOne>
         <div className="SectionOne__title">
           Upcoming Spaceflight Launches
         </div>
         <div className="SectionOne__text">
           View all launches available - including launches from the past and utilize powerful search filters.
         </div>
-        <button className="SectionOne__button">
-          Show All Launches
-        </button>
-      </div>
+        <BigButton>
+          Show All Launches  
+        </BigButton> 
+      </SectionOne>
 
-      <div className="Home__sectionTwo SectionTwo">
-        <div className="SectionTwo__container">
-          <div className="SectionTwo__slider Slider">
-            <Slider items={events} />
+      <SectionTwo>
+        <div className="SectionTwo__slider Slider">
+          <Slider items={events} title="Recent Events" />
+        </div>
+        <div className="SectionTwo__gallery Gallery">
+          <div className="Gallery__title">
+            Spaceflight Launches
           </div>
-          <div className="SectionTwo__gallery Gallery">
-            <div className="Gallery__title">
-              Spaceflight Launches
-            </div>
-            <div className="Gallery__content">
-              <InfiniteScroll
-                dataLength={launches.length}
-                next={() => dispatch(getNextTenLaunches(count))}
-                hasMore={true}
-                loader={<Loader />}
-              >
-                {launches.map(item => {
-                  return(
-                    <BigItem 
-                      key={item.id + item.name} 
-                      item={item}
-                    />
-                  )
-                })}
-              </InfiniteScroll>
-            </div>
+          <div className="Gallery__content">
+            <Gallery />
           </div>
         </div>
-      </div>
+      </SectionTwo>
 
-      <div className="Home__footer">
-        <img src="/bigLogo.svg" alt="" />
-        © 2021 Copyright
-      </div>
+      <Footer />
     </div>
   )
 }

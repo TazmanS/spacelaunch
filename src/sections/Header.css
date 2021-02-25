@@ -1,0 +1,34 @@
+.Header{
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0,0,0, 0.2);
+}
+
+.Header__container{
+  max-width: 1180px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  position: relative;
+}
+
+.Header__container .logo{ 
+  width: 95px;
+  height: 107px;
+  position: absolute;
+  top: 47px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.Header__container .logo__right{
+  width: 95px;
+  height: 107px;
+  top: 47px;
+  position: absolute;
+  right: 0;
+}

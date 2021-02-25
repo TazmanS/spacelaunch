@@ -1,20 +1,13 @@
 import React from 'react'
 import './SmallItem.css'
+import {date} from '../helpers/index'
 
 const SmallItem = ({item}) => {
-  const date = new Date(item.date)
-  var options = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-  };
   return (
     <div className="SmallItem">
       <img src={item.feature_image || "/empty.png"} alt="" className="SmallItem__img"/>
       <div className="SmallItem__date">
-        {date.toLocaleString("en-US", options)}
+        {date(item.date)}
       </div>
       <div className="SmallItem__title">
         {item.name}
