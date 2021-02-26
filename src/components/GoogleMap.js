@@ -2,25 +2,26 @@ import React from 'react'
 import GoogleMapReact from 'google-map-react'
 import {key} from '../info'
 
-const GoogleMap = ({options}) => {
-  let defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33
-    },
-    zoom: 11
-  };
+const GoogleMap = ({coords}) => {
+
   return (
     <GoogleMapReact
       bootstrapURLKeys={{key: key}}
-      defaultCenter={defaultProps?.center}
-      defaultZoom={defaultProps?.zoom}
+      defaultCenter={{
+        lat: +coords.latitude,
+        lng: +coords.longitude
+      }}
+      defaultZoom={15}
       yesIWantToUseGoogleMapApiInternals
     >
-      {/* <div lat={59.955413}
-      lng={30.337844}>
-        TEST
-      </div> */}
+      {/* <img 
+        key={111}
+        src="/marker.png"
+        alt=""
+        lat={+coords.latitude}
+        lng={+coords.longitude} 
+        style={{width: '50px'}}
+      /> */}
     </GoogleMapReact>
   )
 }

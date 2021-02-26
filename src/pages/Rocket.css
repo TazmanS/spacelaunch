@@ -1,11 +1,11 @@
-.Launch{
+.Rocket{
   width: 100%;
-  background-image:url('../images/launchOverlay.svg'),url('../images/launchMain.png');
+  background-image:url('../images/rocketOverlay.png'),url('../images/rocketMain.png');
   background-repeat: no-repeat;
   background-color: #181B48;
 }
 
-.Launch .Header__text{
+.Rocket .Header__text{
   font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
@@ -14,11 +14,11 @@
   color: #F1EBFF;
 }
 
-.Launch .Header__text img{
+.Rocket .Header__text img{
   margin-right: 10px;
 }
 
-.Launch .SectionOne__title{
+.Rocket__name{
   font-family: Montserrat;
   font-style: normal;
   font-weight: 800;
@@ -26,43 +26,32 @@
   line-height: 92px;
   text-align: center;
   color: #F1EBFF;
+  margin-bottom: 10px;
 }
 
-.Launch .SectionOne__text{
+.Rocket__orbit{
   font-family: Montserrat;
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 26px;
   line-height: 38px;
   text-align: center;
   color: #F1EBFF;
-  margin: 10px auto;
-}
-
-.Launch .SectionTwo__title{
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 54px;
-  line-height: 64px;
-  text-align: center;
-  color: #F1EBFF;
-  margin-top: 100px;
   margin-bottom: 20px;
 }
 
-.Launch .SectionTwo__info{
-  font-family: Roboto;
+.Rocket__date{
+  font-family: Montserrat;
   font-style: normal;
-  font-weight: bold;
-  font-size: 17px;
-  line-height: 28px;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 38px;
   text-align: center;
-  color: #FFFFFF;
-  margin: 5px auto;
+  color: #F1EBFF;
+  margin-bottom: 42px;
 }
 
-.Launch .SectionTwo__text{
+.Rocket__description{
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -70,53 +59,77 @@
   line-height: 28px;
   text-align: center;
   color: #C0C0C0;
-  max-width: 865px;
-  margin: 30px auto 0;
+  margin-bottom: 306px;
 }
 
-.Launch .SectionTwo__description{
+.Rocket__char{
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  max-width: 865px;
-  margin: 0 auto;
+  margin: 100px auto 50px;
 }
 
-.Launch .Description__item{
+.Char__item{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 10px 30px;
   background: linear-gradient(94.97deg, #8E2DE2 3.92%, #4A00E0 52.92%);
   border-radius: 50px;
-  margin: 10px;
   font-family: Montserrat;
   font-style: italic;
   font-weight: 500;
   font-size: 18px;
   line-height: 18px;
   color: #F1EBFF;
+  margin: 0 15px;
 }
 
-.Launch .SectionTwo__button{
+.Rocket__table{
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 30px 80px;
-  background: linear-gradient(93.72deg, #8E2DE2 9.41%, #4A00E0 86.1%);
-  border-radius: 50px;
+  /* justify-content: space-around; */
+}
+
+.Rocket__table img{
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+}
+
+.Rocket__family, .Rocket__spec, .Rocket__payload{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+
+.Family__main, .Spec__main, .Payload__main{
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 26px;
+  line-height: 38px;
   text-align: center;
   color: #F1EBFF;
-  margin: 30px auto 100px;
 }
 
-.Launch .SectionTwo__map{
-  max-width: 1180px;
-  height: 492px;
-  margin-bottom: 100px;
+.Family__title, .Spec__title, .Payload__title{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 28px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 10px auto;
+}
+
+.Family__var, .Spec__var, .Payload__var{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 28px;
+  text-align: center;
+  color: #FFFFFF;
 }
