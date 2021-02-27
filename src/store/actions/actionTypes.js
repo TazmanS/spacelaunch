@@ -4,4 +4,6 @@ export const GET_NEXT_TEN_LAUNCHES = 'GET_NEXT_TEN_LAUNCHES'
 export const GET_ONE_LAUNCH_BY_ID = 'GET_ONE_LAUNCH_BY_ID'
 
 export const GET_EVENTS = 'GET_EVENTS'
+export const GET_EVENT = 'GET_EVENT'
 
+export const GET_ROCKET = 'GET_ROCKET'

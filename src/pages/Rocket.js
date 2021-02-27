@@ -1,14 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Rocket.css'
 import Header from '../sections/Header'
 import SectionOne from '../sections/SectionOne'
 import SectionTwo from '../sections/SectionTwo'
 import Footer from '../sections/Footer'
 import {Link} from 'react-router-dom'
+import {id} from '../helpers/index'
+import {useDispatch, useSelector} from 'react-redux'
+import {getRocket} from '../store/actions/rocket'
 
-const Rocket = () => {
+
+const Rocket = ({location}) => {
+  const dispatch = useDispatch()
+  const { rocket } = useSelector(state => state.rocket)
+
+  useEffect(() => {
+    dispatch(getRocket(id(location)))
+  }, [dispatch, location])
+  console.log(rocket)
   return (
-    <div className="Rocket">
+    <div className="Rocket" 
+      style={{'backgroundImage': 
+        `url('/rocketOverlay.png'), url(${rocket.image_url})`
+      }}>
       
       <Header>
         <div className="Header__text">
@@ -21,52 +35,58 @@ const Rocket = () => {
       </Header>
 
       <SectionOne>
-        <div className="Rocket__name">Falcon 9 Block 5</div>
-        <div className="Rocket__orbit">SpaceX (SpX)</div>
-        <div className="Rocket__date">May 11, 2018</div>
-        <div className="Rocket__description">Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit. The Block 5 variant is the fifth major interval aimed at improving upon the ability for rapid reusability.</div>
+        <div className="Rocket__name">{rocket.name}</div>
+        <div className="Rocket__orbit">{rocket.family}</div>
+        <div className="Rocket__date">{rocket.maiden_flight}</div>
+        <div className="Rocket__description">{rocket.description}</div>
       </SectionOne>
 
       <SectionTwo>
         <div className="Rocket__char">
-          <div className="Char__item">ACTIVE</div>
-          <div className="Char__item">RE-USABLE</div>
-          <div className="Char__item">FALCON</div>
+          <div className="Char__item">{rocket.maiden_flight}</div>
+          <div className="Char__item">{rocket.name}</div>
+          <div className="Char__item">{rocket.family}</div>
         </div>
         <div className="Rocket__table">
           <div className="Rocket__family">
             <img src="/family.png" alt="" />
             <div className="Family__main">Family</div>
             <div className="Family__title">Name</div>
-            <div className="Family__var">Falcon 9 Block 5</div>
-            <div className="Family__title">Name</div>
-            <div className="Family__var">Falcon 9 Block 5</div>
-            <div className="Family__title">Name</div>
-            <div className="Family__var">Falcon 9 Block 5</div>
-            <div className="Family__title">Name</div>
-            <div className="Family__var">Falcon 9 Block 5</div>
+            <div className="Family__var">{rocket.name || '-'}</div>
+            <div className="Family__title">Family</div>
+            <div className="Family__var">{rocket.family || '-'}</div>
+            <div className="Family__title">Variant</div>
+            <div className="Family__var">{rocket.variant || '-'}</div>
+            <div className="Family__title">Full Name</div>
+            <div className="Family__var">{rocket.full_name || '-'}</div>
+            <div className="Family__title">Alias</div>
+            <div className="Family__var">{rocket.alias || '-'}</div>
           </div>
           <div className="Rocket__spec">
             <img src="/spec.png" alt="" />
             <div className="Spec__main">Specifications</div>
             <div className="Spec__title">Minimum Stage</div>
-            <div className="Spec__var">1</div>
-            <div className="Spec__title">Minimum Stage</div>
-            <div className="Spec__var">1</div>
-            <div className="Spec__title">Minimum Stage</div>
-            <div className="Spec__var">1</div>
-            <div className="Spec__title">Minimum Stage</div>
-            <div className="Spec__var">1</div>
-            <div className="Spec__title">Minimum Stage</div>
-            <div className="Spec__var">1</div>
+            <div className="Spec__var">{rocket.min_stage || '-'}</div>
+            <div className="Spec__title">Max Stage</div>
+            <div className="Spec__var">{rocket.max_stage || '-'}</div>
+            <div className="Spec__title">Length</div>
+            <div className="Spec__var">{rocket.length || '-'}</div>
+            <div className="Spec__title">Diameter</div>
+            <div className="Spec__var">{rocket.diameter || '-'}</div>
+            <div className="Spec__title">Launch Mass</div>
+            <div className="Spec__var">{rocket.launch_mass || '-'}</div>
+            <div className="Spec__title">Trust</div>
+            <div className="Spec__var">{rocket.to_thrust || '-'}</div>
+            <div className="Spec__title">Apogee</div>
+            <div className="Spec__var">{rocket.apogee || '-'}</div>
           </div>
           <div className="Rocket__payload">
             <img src="/capacity.png" alt="" />
-            <div className="Payload__main">Payload Capacity</div>
-            <div className="Payload__title">Launch Cost</div>
-            <div className="Payload__var">$52,000,000</div>
-            <div className="Payload__title">Launch Cost</div>
-            <div className="Payload__var">$52,000,000</div>
+            <div className="Payload__main">Other</div>
+            <div className="Payload__title">Capacity</div>
+            <div className="Payload__var">{rocket.gto_capacity || '-'}</div>
+            <div className="Payload__title">Maiden Flight</div>
+            <div className="Payload__var">{rocket.maiden_flight || '-'}</div>
           </div>
         </div>
       </SectionTwo>

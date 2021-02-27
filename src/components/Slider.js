@@ -8,6 +8,7 @@ import './Slider.css'
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Slider = ({items, title}) => {
+
   return (
     <div className="Slider">
       <div className="Slider__title">

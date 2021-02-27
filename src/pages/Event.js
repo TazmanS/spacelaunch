@@ -1,9 +1,72 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import './Event.css'
+import Footer from '../sections/Footer'
+import Header from '../sections/Header'
+import SectionOne from '../sections/SectionOne'
+import SectionTwo from '../sections/SectionTwo'
+import BigButton from '../components/BigButton'
+import YouTube from '../components/YouTube'
+import {Link} from 'react-router-dom'
+import Slider from '../components/Slider'
+import {useDispatch, useSelector} from 'react-redux'
+import {getEvents} from '../store/actions/events'
+import {getEvent} from '../store/actions/event'
+import {id, date} from '../helpers/index'
 
-const Event = () => {
+const Event = ({location}) => {
+  const dispatch = useDispatch()
+  const {events} = useSelector(state => state.events)
+  const {event} = useSelector(state => state.event)
+
+  useEffect(() => {
+    dispatch(getEvents())
+    dispatch(getEvent(id(location)))
+  }, [dispatch,location])
+  console.log(event)
+
   return (
-    <div>
-      Event
+    <div className="Event" style={{'backgroundImage': 
+      `url('/rocketOverlay.png'), url(${event?.feature_image})`
+    }}>
+
+      <Header>
+        <div className="Header__text">
+          <Link to='/'>
+            <img src="/arrow.svg" alt="arrow" />
+            Back To Home
+          </Link>
+        </div>
+        <img src="/bigLogo.svg"  alt="logo" className="logo__right" />
+      </Header>
+
+      <SectionOne>
+        <div className="Event__title">{event?.name}</div>
+        <div className="Event__date">{date(event?.date)}</div>
+        <div className="Event__text">{event?.description}</div>
+        <BigButton>
+          Read on site
+        </BigButton>
+      </SectionOne>
+
+      <SectionTwo>
+        <YouTube url={event.video_url}/>
+        <div className="SectionTwo__title">Related Information</div>
+        <div className="Event__info Info">
+          <img src={event.feature_image || ''} alt="" />
+          <div className="Info__container">
+            <div className="Info__title">{event?.name}</div>
+            <div className="Event__date">{date(event?.date)}</div>
+            <div className="Info__des">Destination: <span>{event?.location}</span> </div>
+            <div className="Info__mission">Mission: <span>{event?.type?.name}</span></div>
+            <div className="Info__text">{event?.description}</div>
+          </div>
+        </div>
+        <div className="Event__slider">
+          <Slider items={events} title="Recent Events" />
+        </div>
+      </SectionTwo>
+
+      <Footer />
     </div>
   )
 }

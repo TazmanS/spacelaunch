@@ -9,6 +9,7 @@ import Header from '../sections/Header'
 import SectionOne from '../sections/SectionOne'
 import SectionTwo from '../sections/SectionTwo'
 import YouTube from '../components/YouTube'
+import BigButton from '../components/BigButton'
 import {id} from '../helpers/index'
 import Timer from '../components/Timer'
 
@@ -54,12 +55,20 @@ const Launch = ({location}) => {
         </div>
         <div className="SectionTwo__text">{launch?.mission?.description || 'Does not have'}</div>
 
-        <div className="SectionTwo__title">{launch?.rocket?.configuration?.name || 'Does not have'}</div>
+        <div className="SectionTwo__title">
+          <Link to={`/rocket/${launch?.rocket?.configuration?.id}`}>
+            {launch?.rocket?.configuration?.name || 'Does not have'}
+          </Link>
+        </div>
         <div className="SectionTwo__info">Family: {launch?.rocket?.configuration?.family || 'Does not have'}</div>
         <div className="SectionTwo__info">Configuration: {launch?.rocket?.configuration?.variant || 'Does not have'}</div>
         <div className="SectionTwo__text">{launch?.rocket?.configuration?.description || 'Does not have'}</div>
 
-        <div className="SectionTwo__button">See Rocket Details</div>
+        <BigButton>
+          <Link to={`/rocket/${launch?.rocket?.configuration?.id}`}>
+            See Rocket Details
+          </Link>
+        </BigButton>
 
         <div className="SectionTwo__map">
           {launch.pad ? <GoogleMap coords={launch.pad}/> : null}

@@ -1,6 +1,7 @@
 .BigButton{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: flex-start;
   padding: 30px 80px;
   background: linear-gradient(93.72deg, #8E2DE2 9.41%, #4A00E0 86.1%);

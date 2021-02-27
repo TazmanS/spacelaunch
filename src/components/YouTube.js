@@ -1,9 +1,13 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import './YouTube.css'
 
 const YouTube = ({ url }) => {
-  const id = url?.split('=')?.slice(-1)?.join()
-  const youtube = url?.includes('youtube')
+  let youtube = url?.includes('youtube')
+  const [id, setId] = useState(null)
+
+  useEffect(() => {
+    setId( url?.split('=')?.slice(-1)?.join() )
+  }, [url])
   return (
     <Fragment>
       {youtube

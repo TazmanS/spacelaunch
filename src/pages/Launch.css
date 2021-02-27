@@ -98,25 +98,13 @@
   color: #F1EBFF;
 }
 
-.Launch .SectionTwo__button{
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 30px 80px;
-  background: linear-gradient(93.72deg, #8E2DE2 9.41%, #4A00E0 86.1%);
-  border-radius: 50px;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 20px;
-  text-align: center;
-  color: #F1EBFF;
-  margin: 30px auto 100px;
+.Launch .BigButton {
+  margin: 30px auto 0px;
 }
 
 .Launch .SectionTwo__map{
   max-width: 1180px;
   height: 492px;
   margin-bottom: 100px;
+  margin-top: 100px;
 }

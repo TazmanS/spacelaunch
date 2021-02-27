@@ -1,6 +1,6 @@
 .Rocket{
   width: 100%;
-  background-image:url('../images/rocketOverlay.png'),url('../images/rocketMain.png');
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: #181B48;
 }
