@@ -4,7 +4,6 @@ import Header from '../sections/Header'
 import SectionOne from '../sections/SectionOne'
 import SectionTwo from '../sections/SectionTwo'
 import Footer from '../sections/Footer'
-import {Link} from 'react-router-dom'
 import {id} from '../helpers/index'
 import {useDispatch, useSelector} from 'react-redux'
 import {getRocket} from '../store/actions/rocket'
@@ -17,25 +16,17 @@ const Rocket = ({location}) => {
   useEffect(() => {
     dispatch(getRocket(id(location)))
   }, [dispatch, location])
-  console.log(rocket)
+
   return (
     <div className="Rocket" 
       style={{'backgroundImage': 
-        `url('/rocketOverlay.png'), url(${rocket.image_url})`
+        `url('/spacelaunch/rocketOverlay.png'), url(${rocket.image_url})`
       }}>
       
-      <Header>
-        <div className="Header__text">
-          <Link to='/'>
-            <img src="/arrow.svg" alt="arrow" />
-            Back To Home
-          </Link>
-        </div>
-        <img src="/bigLogo.svg"  alt="logo" className="logo__right" />
-      </Header>
+      <Header />
 
       <SectionOne>
-        <div className="Rocket__name">{rocket.name}</div>
+        <div className="Rocket__name Title--big">{rocket.name}</div>
         <div className="Rocket__orbit">{rocket.family}</div>
         <div className="Rocket__date">{rocket.maiden_flight}</div>
         <div className="Rocket__description">{rocket.description}</div>
@@ -43,9 +34,9 @@ const Rocket = ({location}) => {
 
       <SectionTwo>
         <div className="Rocket__char">
-          <div className="Char__item">{rocket.maiden_flight}</div>
-          <div className="Char__item">{rocket.name}</div>
-          <div className="Char__item">{rocket.family}</div>
+          <div className="Char__item">{rocket.maiden_flight || 'ACTIVE'}</div>
+          <div className="Char__item">{rocket.name || 'RE-USABLE'}</div>
+          <div className="Char__item">{rocket.family || 'FALCON'}</div>
         </div>
         <div className="Rocket__table">
           <div className="Rocket__family">

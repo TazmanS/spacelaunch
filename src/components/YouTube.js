@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './YouTube.css'
 
 const YouTube = ({ url }) => {
@@ -9,21 +9,21 @@ const YouTube = ({ url }) => {
     setId( url?.split('=')?.slice(-1)?.join() )
   }, [url])
   return (
-    <Fragment>
+    <div className="Youtube__container">
       {youtube
         ? 
         <iframe 
-        title="youtube"
-        className="YouTube"
-        src={`https://www.youtube.com/embed/${id}`} 
-        frameBorder="0" 
-        allow="autoplay; encrypted-media" 
-        allowFullScreen>
-      </iframe> 
+          title="youtube"
+          className="Youtube__response"
+          src={`https://www.youtube.com/embed/${id}`} 
+          frameBorder="0" 
+          allow="autoplay; encrypted-media" 
+          allowFullScreen>
+        </iframe> 
         :
         null
       }   
-    </Fragment>
+    </div>
   )
 }
 

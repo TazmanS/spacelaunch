@@ -6,6 +6,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   max-width: 1920px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -17,6 +18,7 @@ code {
 * {
   padding: 0;
   margin: 0;
+  outline: none;
 }
 
 a, a:hover{
@@ -24,3 +26,40 @@ a, a:hover{
   text-decoration: none;
 }
 
+.Title--big{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 76px;
+  line-height: 92px;
+  text-align: center;
+  color: #F1EBFF;
+}
+
+.Date{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px 30px;
+  background: #4A00E0;
+  border-radius: 50px;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  color: #F1EBFF;
+  /* min-width: 256px; */
+}
+
+@media (max-width: 560px) {
+  body{
+    min-width: 100vw;
+  }
+
+  .Title--big{
+    word-wrap: break-word;
+    font-size: 56px;
+  }
+}

@@ -1,31 +1,11 @@
 .Rocket{
   width: 100%;
-  background-size: cover;
+  background-size: cover, 100% auto;
   background-repeat: no-repeat;
   background-color: #181B48;
 }
 
-.Rocket .Header__text{
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 26px;
-  line-height: 38px;
-  color: #F1EBFF;
-}
-
-.Rocket .Header__text img{
-  margin-right: 10px;
-}
-
 .Rocket__name{
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 76px;
-  line-height: 92px;
-  text-align: center;
-  color: #F1EBFF;
   margin-bottom: 10px;
 }
 

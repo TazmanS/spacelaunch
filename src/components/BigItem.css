@@ -6,7 +6,7 @@
 
 .Item__img{
   height: 264px;
-  min-width: 580px
+  min-width: 580px;
 }
 
 .Item__date{
@@ -33,4 +33,18 @@
   line-height: 38px;
   color: #F1EBFF;
   margin: 0 auto;
+}
+
+
+@media (max-width: 580px) {
+  .Item{
+    min-width: 100vw;
+    max-width: 100vw;
+  }
+
+  .Item__img{
+    min-width: 100vw;
+    max-width: 100vw;
+    height: auto;
+  }
 }

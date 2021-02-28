@@ -8,6 +8,49 @@ import './Slider.css'
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Slider = ({items, title}) => {
+  const test = [
+    {
+      name: '1111',
+      date: '',
+      id: 1
+    },
+    {
+      name: '2222',
+      date: '',
+      id: 2
+    },
+    {
+      name: '3333',
+      date: '',
+      id: 3
+    },
+    {
+      name: '4444',
+      date: '',
+      id: 4
+    },
+    {
+      name: '5555',
+      date: '',
+      id: 5
+    },
+    {
+      name: '6666',
+      date: '',
+      id: 6
+    },
+    {
+      name: '7777',
+      date: '',
+      id: 7
+    },
+    {
+      name: '88888',
+      date: '',
+      id: 8
+    },
+
+  ]
 
   return (
     <div className="Slider">
@@ -15,14 +58,26 @@ const Slider = ({items, title}) => {
         {title}
       </div>
       <Swiper
-        // spaceBetween={50}
-        slidesPerView={3}
+        spaceBetween={20}
         navigation={{
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         }}
+        breakpoints={{
+          0: {
+            slidesPerView: 1
+          },
+          780: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          1180: {
+            slidesPerView: 3,
+            spaceBetween: 20
+          }
+        }}
       >
-        {items.map(el => {
+        {test.map(el => {
           return(
             <SwiperSlide key={el.id}>
               <SmallItem item={el}/>

@@ -1,16 +1,12 @@
 .Home{
   width: 100%;
-  background-image: url('../images/homeMain.svg');
   background-repeat: no-repeat;
   background-color: #181B48;
 }
 
 .Home .SectionOne__title{
-  font-weight: 800;
-  font-size: 76px;
-  line-height: 92px;
-  color: #F1EBFF;
   margin: 0 auto;
+  text-align: left;
 }
 
 .Home .SectionOne__text{
@@ -50,4 +46,20 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .Home .SectionOne__title{
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .Home .SectionOne__text{
+    text-align: center;
+    margin: 30px auto 50px;;
+  }
+
+  .Home .BigButton{
+    margin: 0 auto;
+  }
 }

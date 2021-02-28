@@ -6,7 +6,6 @@ import SectionOne from '../sections/SectionOne'
 import SectionTwo from '../sections/SectionTwo'
 import BigButton from '../components/BigButton'
 import YouTube from '../components/YouTube'
-import {Link} from 'react-router-dom'
 import Slider from '../components/Slider'
 import {useDispatch, useSelector} from 'react-redux'
 import {getEvents} from '../store/actions/events'
@@ -22,27 +21,18 @@ const Event = ({location}) => {
     dispatch(getEvents())
     dispatch(getEvent(id(location)))
   }, [dispatch,location])
-  console.log(event)
 
   return (
     <div className="Event" style={{'backgroundImage': 
-      `url('/rocketOverlay.png'), url(${event?.feature_image})`
+      `url('/spacelaunch/rocketOverlay.png'), url(${event.feature_image})`
     }}>
 
-      <Header>
-        <div className="Header__text">
-          <Link to='/'>
-            <img src="/arrow.svg" alt="arrow" />
-            Back To Home
-          </Link>
-        </div>
-        <img src="/bigLogo.svg"  alt="logo" className="logo__right" />
-      </Header>
+      <Header />
 
       <SectionOne>
-        <div className="Event__title">{event?.name}</div>
-        <div className="Event__date">{date(event?.date)}</div>
-        <div className="Event__text">{event?.description}</div>
+        <div className="Event__title Title--big">{event.name}</div>
+        <div className="Event__date Date">{date(event.date)}</div>
+        <div className="Event__text">{event.description}</div>
         <BigButton>
           Read on site
         </BigButton>
@@ -54,11 +44,11 @@ const Event = ({location}) => {
         <div className="Event__info Info">
           <img src={event.feature_image || ''} alt="" />
           <div className="Info__container">
-            <div className="Info__title">{event?.name}</div>
-            <div className="Event__date">{date(event?.date)}</div>
-            <div className="Info__des">Destination: <span>{event?.location}</span> </div>
-            <div className="Info__mission">Mission: <span>{event?.type?.name}</span></div>
-            <div className="Info__text">{event?.description}</div>
+            <div className="Info__title">{event.name}</div>
+            <div className="Event__date Date">{date(event.date)}</div>
+            <div className="Info__des">Destination: <span>{event.location}</span> </div>
+            <div className="Info__mission">Mission: <span>{event.type.name}</span></div>
+            <div className="Info__text">{event.description}</div>
           </div>
         </div>
         <div className="Event__slider">

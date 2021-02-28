@@ -22,14 +22,16 @@ const Home = () => {
   }, [dispatch])
 
   return (
-    <div className="Home">
+    <div className="Home"
+      style={{'backgroundImage': 'url(/spacelaunch/homeMain.svg)'}}
+    >
       
       <Header>
-        <img src="/bigLogo.svg" alt="" className="logo"/> 
+        <img src="/spacelaunch/bigLogo.svg" alt="" className="logo"/> 
       </Header>
 
       <SectionOne>
-        <div className="SectionOne__title">
+        <div className="SectionOne__title Title--big">
           Upcoming Spaceflight Launches
         </div>
         <div className="SectionOne__text">

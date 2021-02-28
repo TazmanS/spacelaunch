@@ -1,31 +1,7 @@
 .Launch{
   width: 100%;
-  background-image:url('../images/launchOverlay.svg'),url('../images/launchMain.png');
   background-repeat: no-repeat;
   background-color: #181B48;
-}
-
-.Launch .Header__text{
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 26px;
-  line-height: 38px;
-  color: #F1EBFF;
-}
-
-.Launch .Header__text img{
-  margin-right: 10px;
-}
-
-.Launch .SectionOne__title{
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 76px;
-  line-height: 92px;
-  text-align: center;
-  color: #F1EBFF;
 }
 
 .Launch .SectionOne__text{
@@ -96,6 +72,7 @@
   font-size: 18px;
   line-height: 18px;
   color: #F1EBFF;
+  text-transform: uppercase;
 }
 
 .Launch .BigButton {
