@@ -16,8 +16,8 @@ function App() {
             <Route path="/spacelaunch" component={Home} exact/>
             <Route path="/spacelaunch/event" component={Event} />
             <Route path="/spacelaunch/rocket" component={Rocket} />
-            <Route path="/spacelaunch/launch" component={Launch} exact/>
-            <Route path="/spacelaunch/launches" component={Launches} exact />
+            <Route path="/spacelaunch/launch" component={Launch}/>
+            <Route path="/spacelaunch/launches" component={Launches} />
           </Switch>
         </Router>  
       </ErrorBoundary>
