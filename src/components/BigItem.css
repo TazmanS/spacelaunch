@@ -42,6 +42,10 @@
     max-width: 100vw;
   }
 
+  .Item__title{
+    padding: 0 15px;
+  }
+
   .Item__img{
     min-width: 100vw;
     max-width: 100vw;

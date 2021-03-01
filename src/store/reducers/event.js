@@ -9,7 +9,8 @@ const initialState = {
     location: '',
     type: {
       name: ''
-    }
+    },
+    url: ''
   }
 }
 

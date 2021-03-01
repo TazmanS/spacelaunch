@@ -11,15 +11,13 @@ const initialState = {
       orbit_abbrev: '',
       description: ''
     },
-    pad: {
-      location: {
-        name: ''
-      },
-      coords: {
-        latitude: 1,
-        longitude: 2
-      }
-    },
+    // pad: {
+    //   location: {
+    //     name: ''
+    //   },
+    //   latitude: 1,
+    //   longitude: 2
+    // },
     rocket: {
       configuration: {
         id: '',

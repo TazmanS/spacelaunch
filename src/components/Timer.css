@@ -18,3 +18,24 @@
 .Timer div {
   width: 20%;
 }
+
+@media (max-width: 780px){
+  .Timer {
+    font-size: 56px;
+    height: 192px;
+  }
+}
+
+@media (max-width: 560px){
+  .Timer {
+    font-size: 32px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 360px){
+  .Timer {
+    font-size: 18px;
+    height: 60px;
+  }
+}

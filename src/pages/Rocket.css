@@ -45,6 +45,7 @@
 .Rocket__char{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 100px auto 50px;
 }
 
@@ -61,11 +62,13 @@
   font-size: 18px;
   line-height: 18px;
   color: #F1EBFF;
-  margin: 0 15px;
+  margin: 10px 15px;
 }
 
 .Rocket__table{
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   /* justify-content: space-around; */
 }
 
@@ -112,4 +115,16 @@
   line-height: 28px;
   text-align: center;
   color: #FFFFFF;
+}
+
+@media (max-width: 1180px){
+  .Rocket__description{
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 780px){
+  .Rocket__table{
+    flex-wrap: wrap;
+  }
 }

@@ -18,3 +18,11 @@ footer img{
   width: 50px;
   height: 55px;
 }
+
+@media (max-width: 1180px) {
+  footer{
+    max-width: calc(100vw - 30px);
+    padding: 0 15px;
+  }
+}
+

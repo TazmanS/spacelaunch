@@ -1,4 +1,4 @@
-import { GET_EVENT } from './actionTypes'
+import { GET_EVENT, SET_ERROR } from './actionTypes'
 import axios from 'axios'
 
 export const getEvent = (id) => {
@@ -13,7 +13,9 @@ export const getEvent = (id) => {
         })
 
     } catch (e) {
-      console.log(e)
+      dispatch({
+        type: SET_ERROR
+      })
     }
   }
 }

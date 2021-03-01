@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { 
   GET_ALL_LAUNCHES, 
-  GET_NEXT_TEN_LAUNCHES
+  GET_NEXT_TEN_LAUNCHES,
+  SET_ERROR
 } from './actionTypes'
 
 export const getFirsTenLaunches = () => {
@@ -16,7 +17,9 @@ export const getFirsTenLaunches = () => {
           })
         })
     } catch (e) {
-      console.log(e)
+      dispatch({
+        type: SET_ERROR
+      })
     }
   }
 }
@@ -33,7 +36,9 @@ export const getNextTenLaunches = count => {
           })
         })
     } catch (e) {
-      console.log(e)
+      dispatch({
+        type: SET_ERROR
+      })
     }
     
   }

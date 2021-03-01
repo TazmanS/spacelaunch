@@ -53,7 +53,7 @@ a, a:hover{
   /* min-width: 256px; */
 }
 
-@media (max-width: 560px) {
+@media (max-width: 780px) {
   body{
     min-width: 100vw;
   }
@@ -61,5 +61,17 @@ a, a:hover{
   .Title--big{
     word-wrap: break-word;
     font-size: 56px;
+  }
+}
+
+
+@media (max-width: 560px) {
+  body{
+    min-width: 100vw;
+  }
+
+  .Title--big{
+    word-wrap: break-word;
+    font-size: 36px;
   }
 }

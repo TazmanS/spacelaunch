@@ -1,0 +1,9 @@
+.Launches{
+  width: 100%;
+  background-repeat: no-repeat;
+  background-color: #181B48;
+}
+
+.Launches .Gallery__content{
+  margin: 100px auto;
+}

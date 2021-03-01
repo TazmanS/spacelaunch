@@ -1,4 +1,4 @@
-import {GET_ONE_LAUNCH_BY_ID} from './actionTypes'
+import {GET_ONE_LAUNCH_BY_ID, SET_ERROR} from './actionTypes'
 import axios from 'axios'
 
 export const getOneLaunch = (id) => {
@@ -12,7 +12,9 @@ export const getOneLaunch = (id) => {
           })
         })
     } catch (e) {
-      console.log(e)
+      dispatch({
+        type: SET_ERROR
+      })
     }
   }
 }

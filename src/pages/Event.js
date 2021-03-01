@@ -16,12 +16,12 @@ const Event = ({location}) => {
   const dispatch = useDispatch()
   const {events} = useSelector(state => state.events)
   const {event} = useSelector(state => state.event)
-
+  
   useEffect(() => {
     dispatch(getEvents())
     dispatch(getEvent(id(location)))
   }, [dispatch,location])
-
+  
   return (
     <div className="Event" style={{'backgroundImage': 
       `url('/spacelaunch/rocketOverlay.png'), url(${event.feature_image})`
@@ -33,9 +33,11 @@ const Event = ({location}) => {
         <div className="Event__title Title--big">{event.name}</div>
         <div className="Event__date Date">{date(event.date)}</div>
         <div className="Event__text">{event.description}</div>
-        <BigButton>
-          Read on site
-        </BigButton>
+        <a href={event.url}>
+          <BigButton>
+            Read on site
+          </BigButton>
+        </a>
       </SectionOne>
 
       <SectionTwo>

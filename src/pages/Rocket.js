@@ -40,7 +40,7 @@ const Rocket = ({location}) => {
         </div>
         <div className="Rocket__table">
           <div className="Rocket__family">
-            <img src="/family.png" alt="" />
+            <img src="/spacelaunch/family.png" alt="" />
             <div className="Family__main">Family</div>
             <div className="Family__title">Name</div>
             <div className="Family__var">{rocket.name || '-'}</div>
@@ -54,7 +54,7 @@ const Rocket = ({location}) => {
             <div className="Family__var">{rocket.alias || '-'}</div>
           </div>
           <div className="Rocket__spec">
-            <img src="/spec.png" alt="" />
+            <img src="/spacelaunch/spec.png" alt="" />
             <div className="Spec__main">Specifications</div>
             <div className="Spec__title">Minimum Stage</div>
             <div className="Spec__var">{rocket.min_stage || '-'}</div>
@@ -72,7 +72,7 @@ const Rocket = ({location}) => {
             <div className="Spec__var">{rocket.apogee || '-'}</div>
           </div>
           <div className="Rocket__payload">
-            <img src="/capacity.png" alt="" />
+            <img src="/spacelaunch/capacity.png" alt="" />
             <div className="Payload__main">Other</div>
             <div className="Payload__title">Capacity</div>
             <div className="Payload__var">{rocket.gto_capacity || '-'}</div>

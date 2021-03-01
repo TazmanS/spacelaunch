@@ -10,6 +10,7 @@ import SectionOne from '../sections/SectionOne'
 import SectionTwo from '../sections/SectionTwo'
 import Gallery from '../components/Gallery'
 import BigButton from '../components/BigButton'
+import {Link} from 'react-router-dom'
 
 
 const Home = () => {
@@ -37,9 +38,11 @@ const Home = () => {
         <div className="SectionOne__text">
           View all launches available - including launches from the past and utilize powerful search filters.
         </div>
-        <BigButton>
-          Show All Launches  
-        </BigButton> 
+        <Link to="/spacelaunch/launches">
+          <BigButton>
+            Show All Launches 
+          </BigButton> 
+        </Link>
       </SectionOne>
 
       <SectionTwo>

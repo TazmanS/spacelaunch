@@ -14,14 +14,14 @@ const GoogleMap = ({coords}) => {
       defaultZoom={15}
       yesIWantToUseGoogleMapApiInternals
     >
-      {/* <img 
+      <img 
         key={111}
-        src="/marker.png"
+        src="/spacelaunch//marker.png"
         alt=""
         lat={+coords.latitude}
         lng={+coords.longitude} 
         style={{width: '50px'}}
-      /> */}
+      />
     </GoogleMapReact>
   )
 }

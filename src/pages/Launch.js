@@ -46,7 +46,7 @@ const Launch = ({location}) => {
           <div className="Description__item">{launch.mission.type || 'LAUNCH COMPLEX 39A'}</div>
           <div className="Description__item">{launch.mission.orbit || 'LOW EARTH ORBIT'}</div>
           <div className="Description__item">{launch.mission.orbit_abbrev || 'PROBABILITY: 60%'}</div>
-          <div className="Description__item">{launch.pad.location.name || 'KENNEDY SPACE CENTER, FL, USA'}</div>
+          <div className="Description__item">{launch.pad?.location?.name || 'KENNEDY SPACE CENTER, FL, USA'}</div>
         </div>
         <div className="SectionTwo__text">{launch.mission.description || 'Does not have'}</div>
 
@@ -66,8 +66,7 @@ const Launch = ({location}) => {
         </BigButton>
 
         <div className="SectionTwo__map">
-          {launch.pad ? <GoogleMap coords={launch.pad}/> : null}
-          
+          {launch?.pad ? <GoogleMap coords={launch?.pad}/> : null}
         </div>
       </SectionTwo>
 

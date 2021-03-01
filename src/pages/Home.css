@@ -4,6 +4,10 @@
   background-color: #181B48;
 }
 
+.Home .SectionOne button {
+  display: inline-flex;
+}
+
 .Home .SectionOne__title{
   margin: 0 auto;
   text-align: left;
@@ -41,7 +45,7 @@
   color: #F1EBFF;
 }
 
-.Home .Gallery__content > div > div{
+.Gallery__content > div > div{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -59,7 +63,20 @@
     margin: 30px auto 50px;;
   }
 
-  .Home .BigButton{
+  .Home a .BigButton{
+    display: flex;
     margin: 0 auto;
   }
+
+  .Home .Gallery__title{
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 360px) {
+  .Home .BigButton{
+    width: 100%;
+    margin: 0 auto;
+  }
+
 }

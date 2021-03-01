@@ -7,3 +7,7 @@ export const GET_EVENTS = 'GET_EVENTS'
 export const GET_EVENT = 'GET_EVENT'
 
 export const GET_ROCKET = 'GET_ROCKET'
+
+
+export const SET_ERROR = 'SET_ERROR'
+export const DELETE_ERROR = 'DELETE_ERROR'

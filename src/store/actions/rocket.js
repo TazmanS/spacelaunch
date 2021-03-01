@@ -1,4 +1,4 @@
-import { GET_ROCKET } from './actionTypes'
+import { GET_ROCKET, SET_ERROR } from './actionTypes'
 import axios from 'axios'
 
 export const getRocket = (id) => {
@@ -14,7 +14,9 @@ export const getRocket = (id) => {
         })
 
     } catch (e) {
-      console.log(e)
+      dispatch({
+        type: SET_ERROR
+      })
     }
   }
 }
