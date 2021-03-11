@@ -13,6 +13,6 @@ export const date = (date, options = defaultOptions) => {
   
 }
 
-export const id = location => {
-  return location.pathname.split('/').slice(-1).join()
-}
+// export const id = location => {
+//   return location.pathname.split('/').slice(-1).join()
+// }

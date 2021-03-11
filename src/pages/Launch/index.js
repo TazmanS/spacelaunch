@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './Launch.css'
-import {Link} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import GoogleMap from '../../components/GoogleMap/'
 import {useDispatch, useSelector} from 'react-redux'
 import {getOneLaunch} from '../../store/actions/launch'
@@ -10,16 +10,16 @@ import SectionOne from '../../sections/SectionOne/'
 import SectionTwo from '../../sections/SectionTwo/'
 import YouTube from '../../components/YouTube/'
 import BigButton from '../../components/BigButton/'
-import {id} from '../../helpers/index'
 import Timer from '../../components/Timer/'
 
-const Launch = ({location}) => {
+const Launch = () => {
   const dispatch = useDispatch()
   const {launch} = useSelector(state => state.launch)
+  const { id } = useParams()
   
   useEffect(() => {
-    dispatch(getOneLaunch(id(location)))
-  }, [dispatch, location])
+    dispatch(getOneLaunch(id))
+  }, [dispatch, id])
 
   return (
     <div className="launch"

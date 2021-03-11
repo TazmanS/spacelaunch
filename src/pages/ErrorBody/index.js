@@ -6,12 +6,18 @@ import BigButton from '../../components/BigButton/'
 
 const ErrorBody = () => {
   const dispatch = useDispatch()
+
+  const moveToMainPage = () => {
+    dispatch(deleteError())
+  }
+
   return (
     <div className="error">
       <div className="error__text">Something went wrong. Please, try again in a little bit</div>
       <BigButton 
-        click={() => dispatch(deleteError())}
-        >Main Page
+        click={moveToMainPage}
+      >
+        Main Page
       </BigButton>
     </div>
   )

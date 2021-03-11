@@ -14,9 +14,9 @@ function App() {
         <Router>
           <Switch>
             <Route path="/spacelaunch" component={Home} exact/>
-            <Route path="/spacelaunch/event" component={Event} />
-            <Route path="/spacelaunch/rocket" component={Rocket} />
-            <Route path="/spacelaunch/launch" component={Launch}/>
+            <Route path="/spacelaunch/event/:id" component={Event} />
+            <Route path="/spacelaunch/rocket/:id" component={Rocket} />
+            <Route path="/spacelaunch/launch/:id" component={Launch}/>
             <Route path="/spacelaunch/launches" component={Launches} />
           </Switch>
         </Router>  

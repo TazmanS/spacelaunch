@@ -4,18 +4,19 @@ import Header from '../../sections/Header/'
 import SectionOne from '../../sections/SectionOne/'
 import SectionTwo from '../../sections/SectionTwo/'
 import Footer from '../../sections/Footer/'
-import {id} from '../../helpers/index'
 import {useDispatch, useSelector} from 'react-redux'
 import {getRocket} from '../../store/actions/rocket'
+import {useParams} from 'react-router-dom'
 
 
-const Rocket = ({location}) => {
+const Rocket = () => {
   const dispatch = useDispatch()
   const { rocket } = useSelector(state => state.rocket)
+  const { id } = useParams()
 
   useEffect(() => {
-    dispatch(getRocket(id(location)))
-  }, [dispatch, location])
+    dispatch(getRocket(id))
+  }, [dispatch, id])
 
   return (
     <div className="rocket" 

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import './Event.css'
+import {useParams} from "react-router-dom"
 import Footer from '../../sections/Footer/'
 import Header from '../../sections/Header/'
 import SectionOne from '../../sections/SectionOne/'
@@ -10,17 +11,18 @@ import Slider from '../../components/Slider/'
 import {useDispatch, useSelector} from 'react-redux'
 import {getEvents} from '../../store/actions/events'
 import {getEvent} from '../../store/actions/event'
-import {id, date} from '../../helpers/index'
+import {date} from '../../helpers/index'
 
-const Event = ({location}) => {
+const Event = () => {
   const dispatch = useDispatch()
   const {events} = useSelector(state => state.events)
   const {event} = useSelector(state => state.event)
+  const { id } = useParams()
   
   useEffect(() => {
     dispatch(getEvents())
-    dispatch(getEvent(id(location)))
-  }, [dispatch,location])
+    dispatch(getEvent(id))
+  }, [dispatch,id])
   
   return (
     <div className="event" style={{'backgroundImage': 

@@ -4,6 +4,7 @@ import {date} from '../../helpers/index'
 import {Link} from 'react-router-dom'
 
 const SmallItem = ({item}) => {
+
   return (
     <div className="smallItem">
       <Link to={`/spacelaunch/event/${item.id}`}>
