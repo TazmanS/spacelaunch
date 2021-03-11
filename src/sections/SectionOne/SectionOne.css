@@ -1,0 +1,17 @@
+.sectionOne{
+  max-width: 900px;
+  margin: 230px auto 156px;
+}
+
+@media (max-width: 1180px) {
+  .sectionOne{
+    max-width: calc(100vw - 30px);
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 780px) {
+  .sectionOne{
+    margin: 35px auto 0;
+  }
+}

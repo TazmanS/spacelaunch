@@ -1,0 +1,20 @@
+.sectionTwo{
+  max-width: 1440px;
+  margin: 230px auto 0;
+  background: #1C2056;
+}
+
+.sectionTwo__container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 780px) {
+  .sectionTwo{
+    margin: 25px auto;
+  }
+}
