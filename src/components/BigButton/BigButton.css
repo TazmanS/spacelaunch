@@ -1,5 +1,5 @@
 .bigButton{
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;

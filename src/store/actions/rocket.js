@@ -1,11 +1,12 @@
 import { GET_ROCKET, SET_ERROR } from './actionTypes'
+import {ROCKET_URL} from './urls'
 import axios from 'axios'
 
 export const getRocket = (id) => {
   return async dispatch => {
     try {
 
-      await axios.get(`https://spacelaunchnow.me/api/3.5.0/config/launcher/${id}/`)
+      await axios.get(ROCKET_URL + id)
         .then(res => {
           dispatch({
             type: GET_ROCKET,

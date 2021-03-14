@@ -1,10 +1,11 @@
 import { GET_EVENT, SET_ERROR } from './actionTypes'
+import {EVENT_URL} from './urls'
 import axios from 'axios'
 
 export const getEvent = (id) => {
   return async dispatch => {
     try {
-      await axios.get(`https://spacelaunchnow.me/api/3.5.0/event/${id}/`)
+      await axios.get(EVENT_URL + id)
         .then(res => {
           dispatch({
             type: GET_EVENT,

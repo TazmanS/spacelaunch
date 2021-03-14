@@ -1,6 +1,6 @@
 import React from 'react'
 import GoogleMapReact from 'google-map-react'
-import {key} from '../../info'
+import {key} from '../../keys'
 
 const GoogleMap = ({coords}) => {
 

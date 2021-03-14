@@ -3,9 +3,9 @@ import './BigButton.css'
 
 const BigButton = ({children, click}) => {
   return (
-    <button className="bigButton" onClick={click}>
+    <div className="bigButton" onClick={click}>
       {children}
-    </button>
+    </div>
   )
 }
 

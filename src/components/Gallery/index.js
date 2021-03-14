@@ -9,10 +9,14 @@ const Gallery = () => {
   const dispatch = useDispatch()
   const {launches, count} = useSelector(state => state.launches)
 
+  const nextTenLaunches = () => {
+    dispatch(getNextTenLaunches(count))
+  }
+
   return (
     <InfiniteScroll
       dataLength={launches.length}
-      next={() => dispatch(getNextTenLaunches(count))}
+      next={nextTenLaunches}
       hasMore={true}
       loader={<Loader />}
     >

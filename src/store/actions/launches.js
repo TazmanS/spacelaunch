@@ -4,11 +4,12 @@ import {
   GET_NEXT_TEN_LAUNCHES,
   SET_ERROR
 } from './actionTypes'
+import {TEN_LAUNCHES, ANOTHER_TEN_LAUNCHES} from './urls'
 
 export const getFirsTenLaunches = () => {
   return async dispatch => {
     try {
-      await axios.get('https://spacelaunchnow.me/api/3.3.0/launch/upcoming/?mode=detailed')
+      await axios.get(TEN_LAUNCHES)
         .then(res => {
           dispatch({
             type: GET_ALL_LAUNCHES,
@@ -27,7 +28,7 @@ export const getFirsTenLaunches = () => {
 export const getNextTenLaunches = count => {
   return async dispatch => {
     try {
-      await axios.get(`https://spacelaunchnow.me/api/3.3.0/launch/upcoming/?mode=detailed&offset=${count}0`)
+      await axios.get(ANOTHER_TEN_LAUNCHES + count + '0')
         .then(res => {
           dispatch({
             type: GET_NEXT_TEN_LAUNCHES,

@@ -56,7 +56,7 @@ const Event = () => {
           </div>
         </div>
         <div className="event__slider">
-          <Slider items={events} title="recent events" />
+          <Slider items={events} title="Recent events" />
         </div>
       </SectionTwo>
 
