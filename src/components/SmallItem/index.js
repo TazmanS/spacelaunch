@@ -1,5 +1,5 @@
 import React from 'react'
-import './SmallItem.css'
+import './SmallItem.scss'
 import {date} from '../../helpers/index'
 import {Link} from 'react-router-dom'
 

@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
 import {Link} from 'react-router-dom'
-import './Header.css'
+import './Header.scss'
 
 const Header = ({children}) => {
   return (
-    <header className="header">
+    <header>
       <div className="header__container">
         {children 
         ? 

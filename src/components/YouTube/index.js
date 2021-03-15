@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import './YouTube.css'
+import './YouTube.scss'
 
 const YouTube = ({ url }) => {
   let youtube = url?.includes('youtube')

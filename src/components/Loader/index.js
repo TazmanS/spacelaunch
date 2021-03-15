@@ -1,11 +1,11 @@
 import React from 'react'
-import './Loader.css'
+import './Loader.scss'
 
 const Loader = () => {
   return (
     <div className="loader">
-      <img src="/spacelaunch/loading.svg" alt="" className="loader__img"/>
-      <div className="loader__title">Load More</div>
+      <img src="/spacelaunch/loading.svg" alt="" className="img"/>
+      <div className="title">Load More</div>
     </div>
   )
 }

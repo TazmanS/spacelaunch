@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import Slider from '../../components/Slider/'
-import './Home.css'
+import './Home.scss'
 import {useDispatch, useSelector} from 'react-redux'
 import {getFirsTenLaunches} from '../../store/actions/launches'
 import {getEvents} from '../../store/actions/events'

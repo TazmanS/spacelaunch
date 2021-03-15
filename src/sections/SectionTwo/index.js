@@ -1,10 +1,10 @@
 import React from 'react'
-import './SectionTwo.css'
+import './SectionTwo.scss'
 
 const SectionTwo = ({children}) => {
   return(
     <section className="sectionTwo">
-      <div className="sectionTwo__container">
+      <div className="container">
         {children}
       </div>
     </section>

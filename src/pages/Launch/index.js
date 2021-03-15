@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import './Launch.css'
+import './Launch.scss'
 import {Link, useParams} from 'react-router-dom'
 import GoogleMap from '../../components/GoogleMap/'
 import {useDispatch, useSelector} from 'react-redux'

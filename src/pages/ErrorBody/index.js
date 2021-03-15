@@ -1,5 +1,5 @@
 import React from 'react'
-import './ErrorBody.css'
+import './ErrorBody.scss'
 import {useDispatch} from 'react-redux'
 import {deleteError} from '../../store/actions/error'
 import BigButton from '../../components/BigButton/'
@@ -12,7 +12,7 @@ const ErrorBody = () => {
   }
 
   return (
-    <div className="error">
+    <div className="error__container">
       <div className="error__text">Something went wrong. Please, try again in a little bit</div>
       <BigButton 
         click={moveToMainPage}

@@ -1,5 +1,5 @@
 import React from 'react'
-import './SectionOne.css'
+import './SectionOne.scss'
 
 const SectionOne = ({children}) => {
   return (

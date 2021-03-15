@@ -1,5 +1,5 @@
 import React from 'react'
-import './Launches.css'
+import './Launches.scss'
 import Header from '../../sections/Header/'
 import SectionOne from '../../sections/SectionOne/'
 import SectionTwo from '../../sections/SectionTwo/'

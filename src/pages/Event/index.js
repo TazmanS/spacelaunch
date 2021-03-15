@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import './Event.css'
+import './Event.scss'
 import {useParams} from "react-router-dom"
 import Footer from '../../sections/Footer/'
 import Header from '../../sections/Header/'

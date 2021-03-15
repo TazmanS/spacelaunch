@@ -13,10 +13,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.timer div {
-  width: 20%;
+  
+  div {
+    width: 20%;
+  }
 }
 
 @media (max-width: 780px){

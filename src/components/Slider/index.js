@@ -1,9 +1,9 @@
 import React from 'react'
+import './Slider.scss'
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 import SmallItem from '../SmallItem/';
-import './Slider.css'
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 

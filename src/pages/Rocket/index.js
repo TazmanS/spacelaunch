@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import './Rocket.css'
+import './Rocket.scss'
 import Header from '../../sections/Header/'
 import SectionOne from '../../sections/SectionOne/'
 import SectionTwo from '../../sections/SectionTwo/'
@@ -54,7 +54,7 @@ const Rocket = () => {
             <div className="family__title">Alias</div>
             <div className="family__var">{rocket.alias || '-'}</div>
           </div>
-          <div className="Rocket__spec">
+          <div className="rocket__spec">
             <img src="/spacelaunch/spec.png" alt="" />
             <div className="spec__main">Specifications</div>
             <div className="spec__title">Minimum Stage</div>

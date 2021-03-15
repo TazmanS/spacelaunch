@@ -1,5 +1,5 @@
 import React from 'react'
-import './BigButton.css'
+import './BigButton.scss'
 
 const BigButton = ({children, click}) => {
   return (
